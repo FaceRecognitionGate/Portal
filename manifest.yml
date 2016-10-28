@@ -1,0 +1,6 @@
+---
+applications:
+- name: Portal-TechWeb
+  memory: 1024M
+  domain: https://Portal-TechWeb.mybluemix.net
+  timeout: 60
