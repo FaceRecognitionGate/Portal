@@ -1,0 +1,17 @@
+#bg-text-override {
+	background-color: #bc0b0b;
+	color: #ffffff;
+}
+
+#bg-border-override {
+	background-color: #bc0b0b;
+	border-color: #bc0b0b;
+}
+
+#bg-border-override:hover {
+	opacity: 0.9;
+}
+
+#bg-border-override:active {
+	opacity: 0.85;
+}
