@@ -94,7 +94,7 @@ public class DashboardController {
   
   @RequestMapping("/profile/edit")
   public String editProfile() {
-    System.out.println("Accessed mapping: /edit-profile");
+    System.out.println("Accessed mapping: /profile/edit");
     return "edit-profile";
   }
   
