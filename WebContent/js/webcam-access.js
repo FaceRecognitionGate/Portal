@@ -4,7 +4,6 @@ $(document).ready(function(){
       
 	navigator.mediaDevices.getUserMedia({video: true}).then(handleVideo);
 	
- 
 	function handleVideo(stream) {
 		video.src = window.URL.createObjectURL(stream);
 		$("#webcam-alert").alert("close");

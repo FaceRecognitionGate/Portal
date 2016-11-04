@@ -109,11 +109,5 @@ public class DashboardController {
     System.out.println("Accessed mapping: /security/history");
     return "access-history";
   }
-  
-  @RequestMapping("/recebeJsonLogin")
-  public String jsonLogin() {
-	  System.out.println("Accessed mapping: /json-Login");
-	  return "jsonLogin";
-  }
 
 }
