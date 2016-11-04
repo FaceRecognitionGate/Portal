@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$("button").click(function(){
-	    window.location.href="edit-profile";
+	    window.location.href="profile/edit";
 	});
 	
 	function editUserInfo() {

@@ -50,6 +50,8 @@
 	
 	<!-- Edit Info -->
 	<script src="js/edit-info.js"></script>
+	
+	
   
   </head>
   
@@ -72,33 +74,30 @@
     				<div class="panel-body">
     					
     					<div class="row">
-    						
-    						<!-- [START] User Picture -->
-    						<div class="col-md-4">
-    							
-    							<div class="row">
-    								
-    								<div class="col-md-12">
-    									
-    									<img src="images/user-picture.png" class="center-block" alt="Foto do Usuário" width="100%">
-    								
-    								</div>
-    							
-    							</div>
-    							
-    							<br>
-    							
-    							<div class="row">
-    								
-    								<div class="col-md-12 text-center">
-    									
-    									<a href="#" style="color:#bc0b0b">Alterar Foto</a>
-    								
-    								</div>
-    							
-    							</div>
-    							
-    						</div>
+    						<form action="">
+	    						<!-- [START] User Picture -->
+	    						<div class="col-md-4">
+	    							
+	    							<div class="row">
+	    								<div class="col-md-12">
+	    										<img id ="profileimg" src="images/user-picture.png" class="center-block" alt="profile-img" style="width:100%">
+	    								</div>
+	    							</div>
+	    							
+	    							<br>
+	    							
+	    							<div class="row">
+	    								<div class="col-md-12 text-center">
+	    									<label for="imgInp" class="btn btn-default btn-danger" style="width:100%;margin-bottom:5%">Alterar Imagem</label>
+ 											<input id="imgInp" style="display:none" type="file">
+	    									<br>
+	    									<button type="submit" id="" class="btn btn-default btn-danger" style="display:none">Salvar</button>
+	    								</div>
+	    							</div>
+	    							
+	    						</div>
+    						</form>
+
     						<!-- [END] User Picture -->
     						
     						<!-- [START] User Info -->
@@ -174,5 +173,30 @@
     </div>
   
   </body>
+  
+  <script type="text/javascript">
+    	function readURL(input) {
+        	if (input.files && input.files[0]) {
+            	
+        		var reader = new FileReader();
+        		
+        		
+                
+                reader.onload = function (e) {
+              		$('#profileimg').attr('src', e.target.result);
+              		var cw = $('#profileimg').width();
+            		$('#profileimg').css({'height':cw+'px'});
+            		$('button').removeAttr('style');
+            		$('button').css ({'width':'100%'});
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    
+        $("#imgInp").change(function(){
+            readURL(this);
+        });
+    </script>
 
 </html>
