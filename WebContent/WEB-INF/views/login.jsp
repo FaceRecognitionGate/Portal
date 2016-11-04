@@ -58,7 +58,7 @@
     							
     							<div class="container-fluid">
     								
-    								<form method="post" action="profile">
+    								<form method="post" action="loginValidation">
   										
   										<div class="form-group">
     										

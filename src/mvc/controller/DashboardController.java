@@ -18,10 +18,10 @@ public class DashboardController {
     return "signup";
   }
   
-  @RequestMapping("/profile")
-  public String profile() {
-    System.out.println("Accessed mapping: /profile");
-    return "profile";
+  @RequestMapping("/login-validation")
+  public String loginValidation() {
+	  System.out.println("Accessed mapping: /login-validation");
+	  return "login-validation";
   }
   
   @RequestMapping("/edit-profile")
@@ -40,6 +40,12 @@ public class DashboardController {
   public String accessHistory() {
     System.out.println("Accessed mapping: /access-history");
     return "access-history";
+  }
+  
+  @RequestMapping("/recebeJsonLogin")
+  public String jsonLogin() {
+	  System.out.println("Accessed mapping: /json-Login");
+	  return "jsonLogin";
   }
 
 }
