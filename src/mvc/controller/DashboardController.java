@@ -24,6 +24,12 @@ public class DashboardController {
 	  return "login-validation";
   }
   
+  @RequestMapping("/profile")
+  public String profile() {
+	  System.out.println("Accessed mapping: /profile");
+	  return "profile";
+  }
+  
   @RequestMapping("/edit-profile")
   public String editProfile() {
     System.out.println("Accessed mapping: /edit-profile");
