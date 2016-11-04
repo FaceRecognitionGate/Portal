@@ -83,6 +83,7 @@ public class DashboardController {
   public String loginValidation(Login login) {
 	  login.initJson();
 	  System.out.println("Accessed mapping: /login-validation");
+	  System.out.println(login.getJson());
 	  return "login-validation";
   }
   
@@ -108,6 +109,12 @@ public class DashboardController {
   public String accessHistory() {
     System.out.println("Accessed mapping: /security/history");
     return "access-history";
+  }
+  
+  @RequestMapping("/recebeJsonLogin")
+  public String jsonLogin() {
+	  System.out.println("Accessed mapping: /json-Login");
+	  return "jsonLogin";
   }
 
 }
