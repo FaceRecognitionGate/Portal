@@ -1,7 +1,7 @@
 ---
 applications:
-- name: Portal-TechWeb
+- name: CatracaInsper
   memory: 1024M
   domain: mybluemix.net
   timeout: 60
-  host: portal-techweb
+  host: CatracaInsper
