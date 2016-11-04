@@ -92,21 +92,21 @@ public class DashboardController {
 	  return "profile";
   }
   
-  @RequestMapping("/edit-profile")
+  @RequestMapping("/profile/edit")
   public String editProfile() {
     System.out.println("Accessed mapping: /edit-profile");
     return "edit-profile";
   }
   
-  @RequestMapping("/gate-access")
+  @RequestMapping("/security/gate")
   public String gateAccess() {
-    System.out.println("Accessed mapping: /gate-access");
+    System.out.println("Accessed mapping: /security/gate");
     return "gate-access";
   }
   
-  @RequestMapping("/access-history")
+  @RequestMapping("/security/history")
   public String accessHistory() {
-    System.out.println("Accessed mapping: /access-history");
+    System.out.println("Accessed mapping: /security/history");
     return "access-history";
   }
   
