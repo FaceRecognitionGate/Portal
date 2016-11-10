@@ -22,8 +22,11 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar"/>
+=======
+>>>>>>> Gabi
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
