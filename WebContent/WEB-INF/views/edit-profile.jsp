@@ -77,42 +77,6 @@
     				</div>
     				
     				<div class="panel-body">
-    				
-<!--     					<div class="row">
-    					
-    						<div class="col-md-12">
-    						
-    							<div class="alert alert-warning" id="webcam-alert">
-    										
-    								Enquanto você estiver realizando o cadastro estaremos filmando para salvar seu rosto em
-    								nosso banco de dados! Por favor permita o acesso à sua câmera na parte de cima do navegador.
-    								Se você fechou o aviso que apareceu no canto superior esquerdo, recarregue a página! 
-    										
-    							</div>
-    						
-    						</div>
-    					
-    					</div> -->
-    					
-<!--     					<div class="row">
-    					
-    						<div class="col-md-4">
-    							
-    							<div class="row">
-    							
-    								<div class="col-md-12">
-    								
-    									<div class="embed-responsive embed-responsive-16by9">
-  									
-  											<video autoplay="autoplay" id="user-webcam"></video>
-								
-										</div>
-										
-									</div>
-    							
-    							</div>
-    							    							
-    						</div> -->
     					
     						<div class="col-md-16">
 								
@@ -259,8 +223,6 @@
     		
     </div>
     
-<!--     User Webcam Access
-  	<script src="js/webcam-access.js"></script> -->
   	
   	<!-- Form Masking/Validation -->
   	<script src="js/signup-form-validation.js"></script>

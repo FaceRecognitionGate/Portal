@@ -27,9 +27,14 @@
 	<!-- Font Awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  
+    
+    <!-- jQuery Form Mask Plug-in -->
+  	<script src="js/jquery-mask.min.js"></script>
   </head>
   
   <body style="overflow-y:hidden;">
@@ -46,7 +51,7 @@
     				
     				<div id="bg-text-override" class="panel-heading">
     					
-    					<h1>Bem-vindo!</h1>
+    					<h1>Pesquisar Usuario</h1>
     				
     				</div>
     				
@@ -62,17 +67,12 @@
   										
   										<div class="form-group">
     										
-    										<input type="email" class="form-control" name="email" placeholder="Email">
+                                    			<input aria-describedby="rg-addon" class="form-control" maxlength="12" name="rg" placeholder="RG" required type="text">
   										
   										</div>
+  									
   										
-  										<div class="form-group">
-    										
-    										<input type="password" class="form-control" name="password" placeholder="Senha">
-  										
-  										</div>
-  										
-  										<button type="submit" class="btn btn-default btn-block" widht="100%">Login</button>
+  										<button type="submit" class="btn btn-default" style="width:100%">Pesquisar</button>
 									
 									</form>
     							
@@ -84,19 +84,6 @@
     					
     					<br>
     					
-    					<div class="row">
-    						
-    						<div class="col-md-1 spacer"></div>
-    						
-    						<div class="col-md-10" style="text-align:center">
-    							
-    							<a href="signup" style="color:#bc0b0b">Ainda não me cadastrei!</a>
-    						
-    						</div>
-    						
-    						<div class="col-md-1 spacer"></div>
-    					
-    					</div>
     				
     				</div>
     			
@@ -110,11 +97,11 @@
     
     </div>
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     
     <!-- Form Masking/Validation -->
   	<script src="js/signup-form-validation.js"></script>
+  
   </body>
 
 </html>

@@ -41,5 +41,11 @@ public class DashboardController {
     System.out.println("Accessed mapping: /access-history");
     return "access-history";
   }
+  
+  @RequestMapping("/search")
+  public String search() {
+    System.out.println("Accessed mapping: /search");
+    return "search";
+  }
 
 }
