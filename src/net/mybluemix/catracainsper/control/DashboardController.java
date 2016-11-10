@@ -1,4 +1,4 @@
-package mvc.controller;
+package net.mybluemix.catracainsper.control;
 
 
 import java.io.BufferedReader;
@@ -14,7 +14,7 @@ import org.omg.CORBA.portable.InputStream;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import mvc.model.Login;
+import net.mybluemix.catracainsper.model.Login;
 
 @Controller
 public class DashboardController {

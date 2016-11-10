@@ -1,4 +1,4 @@
-package mvc.model;
+package net.mybluemix.catracainsper.model;
 
 public class User {
   
