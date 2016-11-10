@@ -111,6 +111,12 @@ public class DashboardController {
     return "access-history";
   }
   
+  @RequestMapping("/search")
+  public String search() {
+    System.out.println("Accessed mapping: /search");
+    return "search";
+  }
+  
   @RequestMapping("/recebeJsonLogin")
   public String jsonLogin() {
 	  System.out.println("Accessed mapping: /json-Login");
