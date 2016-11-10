@@ -108,11 +108,11 @@
 							
 							</table>
 							
-							<div class="btn-group" role="group" aria-label="" style="width:100%">
+							<div >
   								
-  								<a class="btn btn-info" href="access-history" role="button" style="width:50%">Histórico de Acesso</a>
-  								
-  								<button type="button" class="btn btn-success" style="width:50%">Liberar Catraca</button>
+  								<div> <a class="btn btn-warning" href="access-history" role="button" style="width:100%">Histórico de Acesso</a> </div> <p>
+  								<div> <a class="btn btn-info" href="search" role="button" style="width:100%">Pesquisar Usuario</a> </div> <p>
+  								<div> <button type="button" class="btn btn-success" style="width:100%">Liberar Catraca</button> </div>
   
 							</div>
     						
