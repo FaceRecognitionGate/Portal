@@ -20,7 +20,39 @@ import mvc.model.Login;
 
 @Controller
 public class DashboardController {
+	
+	private void URLPost (String content, String URL) throws IOException {
+		  URL url = null;
+		  url = new URL(URL);
+		  HttpURLConnection urlConn = null;
+		  urlConn = (HttpURLConnection) url.openConnection();
+		  urlConn.setDoInput(true);
+		  urlConn.setDoOutput(true);
+		  urlConn.setRequestMethod("POST");
+		  urlConn.setRequestProperty("Content-Type", "application/json");
+		  urlConn.connect();
+			
+		  DataOutputStream output = null;
+		  DataInputStream input = null;
+		  output = new DataOutputStream(urlConn.getOutputStream());
 
+
+		  /*Construct the POST data.*/
+		  String postContent = content;
+		
+		  /* Send the request data.*/
+		  output.writeBytes(content);
+		  output.flush();
+		  output.close();
+			
+		  /* Get response data.*/
+		  String response = null;
+		  input = new DataInputStream (urlConn.getInputStream());
+		  while (null != ((response = input.readLine()))) {
+			  System.out.println(response);
+			  input.close ();
+		  }
+	}
   
   @RequestMapping("/")
   public String index() {
@@ -35,42 +67,14 @@ public class DashboardController {
   }
   
   @RequestMapping("/login-validation")
-  public String loginValidation(Login login) throws IOException {
-	  URL url = null;
-	  url = new URL("persistenciatecwebeclipse.mybluemix.net");
-	  HttpURLConnection urlConn = null;
-	  urlConn = (HttpURLConnection) url.openConnection();
-	  urlConn.setDoInput(true);
-	  urlConn.setDoOutput(true);
-	  urlConn.setRequestMethod("POST");
-	  urlConn.setRequestProperty("Content-Type", "application/json");
-	  urlConn.connect();
-		
-	  DataOutputStream output = null;
-	  DataInputStream input = null;
-	  output = new DataOutputStream(urlConn.getOutputStream());
+  public String loginValidation(Login login) throws IOException{
 	  login.initJson();
-
-	  /*Construct the POST data.*/
 	  String content = login.getJson().toString();
-	
-	  /* Send the request data.*/
-	  output.writeBytes(content);
-	  output.flush();
-	  output.close();
-		
-	  /* Get response data.*/
-	  String response = null;
-	  input = new DataInputStream (urlConn.getInputStream());
-	  while (null != ((response = input.readLine()))) {
-		  System.out.println(response);
-		  input.close ();
-	  }
-	  
-	  System.out.println("Accessed mapping: /login-validation");
-	  System.out.println(login.getJson());
+	  String URL = "https://www.persistenciatecwebeclipse.mybluemix.net";
+	  URLPost (content, URL);
 	  return "login-validation";
   }
+
   
   @RequestMapping("/profile")
   public String profile() {
