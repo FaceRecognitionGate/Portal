@@ -16,7 +16,7 @@ import net.mybluemix.catracainsper.model.Login;
 public class DashboardController {
 	
 	@SuppressWarnings("deprecation")
-	private void URLPost (String content, String URL) throws IOException {
+	private void URLPost(String content, String URL) throws IOException {
 		  URL url = null;
 		  url = new URL(URL);
 		  HttpURLConnection urlConn = null;
@@ -99,12 +99,6 @@ public class DashboardController {
   public String search() {
     System.out.println("Accessed mapping: /search");
     return "search";
-  }
-  
-  @RequestMapping("/recebeJsonLogin")
-  public String jsonLogin() {
-	  System.out.println("Accessed mapping: /json-Login");
-	  return "jsonLogin";
   }
 
 }
