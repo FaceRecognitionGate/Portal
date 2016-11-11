@@ -1,16 +1,12 @@
 package net.mybluemix.catracainsper.control;
 
 
-import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.omg.CORBA.portable.InputStream;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,6 +15,7 @@ import net.mybluemix.catracainsper.model.Login;
 @Controller
 public class DashboardController {
 	
+	@SuppressWarnings("deprecation")
 	private void URLPost (String content, String URL) throws IOException {
 		  URL url = null;
 		  url = new URL(URL);
@@ -39,7 +36,7 @@ public class DashboardController {
 		  String postContent = content;
 		
 		  /* Send the request data.*/
-		  output.writeBytes(content);
+		  output.writeBytes(postContent);
 		  output.flush();
 		  output.close();
 			
