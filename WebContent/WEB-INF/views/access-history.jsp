@@ -175,7 +175,7 @@
 		
 			<div class="col-md-2 col-md-offset-8">
 			
-				<a class="btn btn-default" href="gate-access" role="button" style="width:100%">Voltar</a>
+				<a class="btn btn-default" href="/Portal/security/gate" role="button" style="width:100%">Voltar</a>
 			
 			</div>
 		

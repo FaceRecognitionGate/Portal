@@ -1,4 +1,4 @@
-package net.mybluemix.catracainsper.control;
+package mvc.controller;
 
 
 import java.io.DataInputStream;
@@ -10,7 +10,7 @@ import java.net.URL;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.mybluemix.catracainsper.model.Login;
+import mvc.model.Login;
 
 @Controller
 public class DashboardController {
@@ -55,19 +55,21 @@ public class DashboardController {
     return "login";
   }
   
-  @RequestMapping("/signup")
-  public String signup() {
-    System.out.println("Accessed mapping: /signup");
-    return "signup";
-  }
+
   
   @RequestMapping("/login-validation")
   public String loginValidation(Login login) throws IOException{
 	  login.initJson();
 	  String content = login.getJson().toString();
-	  String URL = "https://www.persistenciatecwebeclipse.mybluemix.net";
+	  String URL = "https://www.persistenciatecwebeclipse.mybluemix.net/recebeJsonLogin)";
 	  URLPost (content, URL);
 	  return "login-validation";
+  }
+  
+  @RequestMapping("/signup")
+  public String signup(){
+    System.out.println("Accessed mapping: /signup");
+    return "signup";
   }
 
   
@@ -77,25 +79,25 @@ public class DashboardController {
 	  return "profile";
   }
   
-  @RequestMapping("/profile/edit")
+  @RequestMapping("profile/edit")
   public String editProfile() {
     System.out.println("Accessed mapping: /profile/edit");
     return "edit-profile";
   }
   
-  @RequestMapping("/security/gate")
+  @RequestMapping("security/gate")
   public String gateAccess() {
     System.out.println("Accessed mapping: /security/gate");
     return "gate-access";
   }
   
-  @RequestMapping("/security/history")
+  @RequestMapping("security/history")
   public String accessHistory() {
     System.out.println("Accessed mapping: /security/history");
     return "access-history";
   }
   
-  @RequestMapping("/search")
+  @RequestMapping("security/search")
   public String search() {
     System.out.println("Accessed mapping: /search");
     return "search";

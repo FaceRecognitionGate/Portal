@@ -86,7 +86,12 @@
     					
     				
     				</div>
-    			
+
+				</div>
+		    	<div class="col-md-offset-8">
+			
+					<a class="btn btn-default" href="/Portal/security/gate" role="button" style="width:100%">Voltar</a>
+		
     			</div>
     		
     		</div>
@@ -94,6 +99,9 @@
     		<div class="col-md-4 spacer"></div>
     	
     	</div>
+    	<div class="row">
+		
+	
     
     </div>
     

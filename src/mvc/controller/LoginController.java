@@ -1,11 +1,11 @@
-package net.mybluemix.catracainsper.control;
+package mvc.controller;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.mybluemix.catracainsper.model.User;
+import mvc.model.User;
 
 @Controller
 public class LoginController {
