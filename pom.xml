@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Dashboard</groupId>
-  <artifactId>Dashboard</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>Portal</groupId>
+  <artifactId>Portal</artifactId>
+  <version>Beta</version>
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -41,7 +41,6 @@
         <artifactId>hibernate-validator</artifactId>
         <version>5.2.4.Final</version>
     </dependency>
-    <!--  Gson: Java to Json conversion -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>

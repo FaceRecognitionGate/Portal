@@ -1,4 +1,4 @@
-package mvc.model;
+package net.mybluemix.catracainsper.model;
 
 import com.google.gson.Gson;
 

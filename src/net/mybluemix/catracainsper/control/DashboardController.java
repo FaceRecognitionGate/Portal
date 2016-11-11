@@ -1,27 +1,22 @@
-package mvc.controller;
+package net.mybluemix.catracainsper.control;
 
 
-import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.omg.CORBA.portable.InputStream;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import mvc.model.Login;
+import net.mybluemix.catracainsper.model.Login;
 
 @Controller
 public class DashboardController {
 	
-	private void URLPost (String content, String URL) throws IOException {
+	@SuppressWarnings("deprecation")
+	private void URLPost(String content, String URL) throws IOException {
 		  URL url = null;
 		  url = new URL(URL);
 		  HttpURLConnection urlConn = null;
@@ -41,7 +36,7 @@ public class DashboardController {
 		  String postContent = content;
 		
 		  /* Send the request data.*/
-		  output.writeBytes(content);
+		  output.writeBytes(postContent);
 		  output.flush();
 		  output.close();
 			
@@ -104,12 +99,6 @@ public class DashboardController {
   public String search() {
     System.out.println("Accessed mapping: /search");
     return "search";
-  }
-  
-  @RequestMapping("/recebeJsonLogin")
-  public String jsonLogin() {
-	  System.out.println("Accessed mapping: /json-Login");
-	  return "jsonLogin";
   }
 
 }
