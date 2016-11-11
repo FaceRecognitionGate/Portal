@@ -27,5 +27,10 @@
 	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/apache-mime4j-0.6.1.jar/apache-mime4j-0.6.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/apache-mime4j-0.6.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpmime-4.5.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

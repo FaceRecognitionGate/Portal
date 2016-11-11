@@ -1,4 +1,4 @@
-package net.mybluemix.catracainsper.control;
+package mvc.controller;
 
 
 import java.io.DataInputStream;
@@ -10,7 +10,7 @@ import java.net.URL;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.mybluemix.catracainsper.model.Login;
+import mvc.model.Login;
 
 @Controller
 public class DashboardController {
@@ -78,7 +78,8 @@ public class DashboardController {
   }
   
   @RequestMapping("/profile/edit")
-  public String editProfile() {
+  public String editProfile() throws Exception {
+	SendImage.UploadZip();
     System.out.println("Accessed mapping: /profile/edit");
     return "edit-profile";
   }
