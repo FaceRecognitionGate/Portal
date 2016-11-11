@@ -25,5 +25,7 @@
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Rafael/Downloads/httpcomponents-client-4.5.2-bin (1)/httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
