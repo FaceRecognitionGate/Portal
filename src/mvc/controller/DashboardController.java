@@ -49,18 +49,6 @@ public class DashboardController {
 		  }
 	}
   
-  @RequestMapping("/")
-  public String index() {
-    System.out.println("Accessed mapping: /");
-    return "login";
-  }
-  
-  @RequestMapping("/signup")
-  public String signup() {
-    System.out.println("Accessed mapping: /signup");
-    return "signup";
-  }
-  
   @RequestMapping("/login-validation")
   public String loginValidation(Login login) throws IOException{
 	  login.initJson();
@@ -68,38 +56,6 @@ public class DashboardController {
 	  String URL = "https://www.persistenciatecwebeclipse.mybluemix.net";
 	  URLPost (content, URL);
 	  return "login-validation";
-  }
-
-  
-  @RequestMapping("/profile")
-  public String profile() {
-	  System.out.println("Accessed mapping: /profile");
-	  return "profile";
-  }
-  
-  @RequestMapping("/profile/edit")
-  public String editProfile() throws Exception {
-	SendImage.UploadZip();
-    System.out.println("Accessed mapping: /profile/edit");
-    return "edit-profile";
-  }
-  
-  @RequestMapping("/security/gate")
-  public String gateAccess() {
-    System.out.println("Accessed mapping: /security/gate");
-    return "gate-access";
-  }
-  
-  @RequestMapping("/security/history")
-  public String accessHistory() {
-    System.out.println("Accessed mapping: /security/history");
-    return "access-history";
-  }
-  
-  @RequestMapping("/search")
-  public String search() {
-    System.out.println("Accessed mapping: /search");
-    return "search";
   }
 
 }

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import mvc.model.User;
 
 @Controller
-public class LoginController {
+public class LoginMapping {
 
   @RequestMapping("/login")
   public String login(User user, HttpSession session) {
-    return "";
+    return "login";
   }
 }

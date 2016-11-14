@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 public class Login {
     
     private String email;
-    
     private String password;
     
 	Gson gson = new Gson();
