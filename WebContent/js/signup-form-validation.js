@@ -41,7 +41,7 @@ $(document).ready(function(){
 	var validFields = [];
 	$('input, select').not(':input[type=submit]').each(function() {
 		 
-		$(this).keyup(function() {
+		$(this).blur(function() {
 			if(isValid($(this))) {
 				$(this).parent().addClass('has-success'); $(this).parent().removeClass('has-error');
 				$(this).siblings().html('<i class="fa fa-check"></i>');
@@ -50,8 +50,6 @@ $(document).ready(function(){
 					console.log('Pushed valid field ' + $(this).attr('name'));
 					console.log(validFields);
 				}
-				
-				validFields.push($(this).attr('name'));
 			} else {
 				$(this).parent().addClass('has-error'); $(this).parent().removeClass('has-success');
 				$(this).siblings().html('<i class="fa fa-times"></i>');

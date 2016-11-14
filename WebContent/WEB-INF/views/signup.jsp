@@ -12,7 +12,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Cadastro - Catraca</title>
+    <title>Cadastro - CatracaInsper</title>
 
     <!-- Bootstrap CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -78,9 +78,10 @@
     						
     							<div class="alert alert-warning" id="webcam-alert">
     										
-    								Enquanto você estiver realizando o cadastro estaremos filmando para salvar seu rosto em
-    								nosso banco de dados! Por favor permita o acesso à sua câmera na parte de cima do navegador.
-    								Se você fechou o aviso que apareceu no canto superior esquerdo, recarregue a página! 
+    								Enquanto você estiver realizando o cadastro estaremos fotografando seu rosto para
+    								podermos adicioná-lo ao sistema de reconhecimento facial! Por favor permita o acesso 
+    								à sua câmera na parte de cima do navegador. Se você fechou o aviso no canto superior
+    								esquerdo, recarregue a página!
     										
     							</div>
     						
@@ -110,7 +111,7 @@
     					
     						<div class="col-md-8">
 								
-								<form method="post" action="profile" id="signup-form" autocomplete="off">
+								<form method="post" action="signupValidation" id="signup-form" autocomplete="off">
 										
 									<!-- [START] First section: FirstName, LastName, Email, Password, ConfirmPassword -->
 									<div class="col-md-6">
