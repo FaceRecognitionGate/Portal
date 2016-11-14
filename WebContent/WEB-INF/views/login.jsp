@@ -24,6 +24,12 @@
 	<link href="css/default.css" rel="stylesheet">
 	<link href="css/override.css" rel="stylesheet">
 	
+	<!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous">
+    </script>
+	
 	<!-- Font Awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	
@@ -58,11 +64,16 @@
     							
     							<div class="container-fluid">
     								
-    								<form method="post" action="loginValidation">
+    								<form method="post" action="/loginValidation">
   										
   										<div class="form-group">
+  										
+  											<div class="input-group">
     										
-    										<input type="email" class="form-control" name="email" placeholder="Email">
+    											<input aria-describedby="email-addon" type="email" class="form-control" name="email" placeholder="Email">
+  												<span class="input-group-addon" id="email-addon"><i class="fa fa-circle-o"></i></span>
+  										
+  											</div>
   										
   										</div>
   										
@@ -110,8 +121,8 @@
     
     </div>
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Form Masking/Validation -->
+  	<script src="js/login-form-validation.js"></script>
   
   </body>
 
