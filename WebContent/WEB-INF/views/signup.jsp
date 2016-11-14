@@ -120,7 +120,7 @@
 										
 											<div class="input-group">
 												
-												<input aria-describedby="first-name-addon" class="form-control validation" name="first-name" placeholder="Nome" required type="text">
+												<input aria-describedby="first-name-addon" class="form-control validation" name="firstName" placeholder="Nome" required type="text">
 												<span class="input-group-addon" id="first-name-addon"><i class="fa fa-circle-o"></i></span>
 												
 											</div>
@@ -131,7 +131,7 @@
                                 		
                                 			<div class="input-group">
                                              
-                                				<input aria-describedby="last-name-addon" class="form-control validation" name="last-name" placeholder="Sobrenome" required type="text">
+                                				<input aria-describedby="last-name-addon" class="form-control validation" name="lastName" placeholder="Sobrenome" required type="text">
                                 				<span class="input-group-addon" id="last-name-addon"><i class="fa fa-circle-o"></i></span>
                                 	
                                 			</div>

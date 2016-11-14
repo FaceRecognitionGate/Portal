@@ -187,7 +187,7 @@
               		var cw = $('#profileimg').width();
             		$('#profileimg').css({'height':cw+'px'});
             		$('button').removeAttr('style');
-            		$('button').css ({'width':'100%'});
+            		$('button').css({'width':'100%'});
                 }
                 
                 reader.readAsDataURL(input.files[0]);
