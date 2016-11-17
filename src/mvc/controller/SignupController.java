@@ -32,17 +32,11 @@ public class SignupController {
 		return "signup";
 	}
 	
-	@RequestMapping("webcam-test")
-	public String webcam() {
-		return "webcam-upload-test";
-	}
 	
 	@PostMapping("signupValidate")
 	public String signupValidatePOST() throws IOException {
 		  System.out.println("ENTROU EM VALIDATE");
-		  
-		  
-		  			  
+			  
 		  HttpClient client = HttpClients.createDefault();
 		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
 		  String url1 = "http://requestb.in/qnht7uqn";
