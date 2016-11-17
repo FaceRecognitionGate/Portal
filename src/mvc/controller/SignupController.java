@@ -32,7 +32,7 @@ public class SignupController {
 		return "signup";
 	}
 	
-	@RequestMapping("webcam-test")
+	@RequestMapping("/webcam-test")
 	public String webcam() {
 		return "webcam-test";
 	}
