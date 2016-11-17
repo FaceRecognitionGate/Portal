@@ -13,7 +13,7 @@ public class ProfileController {
 	
 	@RequestMapping(value="/profile/edit")
 	public String profileEdit() throws Exception {
-		SendImage.UploadZip();
+		//SendImage.UploadZip();
 		return "edit-profile";
 	}
 }

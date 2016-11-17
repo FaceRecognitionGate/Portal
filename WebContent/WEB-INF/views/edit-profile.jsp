@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 
@@ -21,9 +22,9 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
 
 	<!-- Custom CSS -->
-	<link href="css/default.css" rel="stylesheet">
-	<link href="css/override.css" rel="stylesheet">
-	<link href="css/signup.css" rel="stylesheet">
+	<link href="<c:url value="/css/default.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/override.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/signup.css"/>" rel="stylesheet">
 	
 	<!-- Font Awesome -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
