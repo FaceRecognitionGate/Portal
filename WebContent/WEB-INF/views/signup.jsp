@@ -84,6 +84,12 @@
     								esquerdo, recarregue a página!
     										
     							</div>
+    							
+    							<div class="alert alert-warning" id="webcam-alert">
+    										
+    								Quando estiver pronto(a), clique em salvar imagem para poder prosseguir com o cadastro!
+    										
+    							</div>
     						
     						</div>
     					
@@ -97,11 +103,16 @@
     							
     								<div class="col-md-12">
     								
+    								
     									<div class="embed-responsive embed-responsive-16by9">
   									
-  											<video autoplay="autoplay" id="user-webcam"></video>
-								
+  											<video autoplay="autoplay" id="video"></video>
+  											
 										</div>
+										
+										<button id="snap" class="btn btn-default btn-danger" style="width:100%;margin-top:5%">Salvar Imagens</button>
+										
+										<canvas id="canvas" width="640" height="480" style="width:100%;display:none"></canvas>
 										
 									</div>
     							
