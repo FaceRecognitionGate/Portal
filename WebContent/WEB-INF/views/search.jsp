@@ -86,10 +86,21 @@
     					
     				
     				</div>
+    		<div class="row">
+		
+				<div class="col-md-4 col-md-offset-8">
+				
+					<a class="btn btn-default" href="gate" role="button" style="width:100%">Voltar</a>
+				
+				</div>
+		
+			</div>	
     			
     			</div>
+
     		
     		</div>
+
     		
     		<div class="col-md-4 spacer"></div>
     	
