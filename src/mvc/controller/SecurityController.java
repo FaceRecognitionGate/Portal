@@ -34,6 +34,7 @@ public class SecurityController {
 	
 	@PostMapping("security/open")
 	public String openGate() throws ClientProtocolException, IOException {
+		System.out.println("Accessed: /security/open method=POST");
 		
 		HttpClient client = HttpClients.createDefault();
 		String url = "http://10.91.18.15:8080/Servo_Catraca/open2";
@@ -46,7 +47,7 @@ public class SecurityController {
 			return "redirect:../security/gate";
 		}
 		
-		return "gate-access";
+		return "redirect:../security/gate";
 	}
 	
 }
