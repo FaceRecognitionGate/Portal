@@ -10,7 +10,7 @@ import java.net.URL;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import mvc.model.Login;
+import mvc.model.LoginForm;
 
 @Controller
 public class DashboardController {
@@ -50,7 +50,7 @@ public class DashboardController {
 	}
   
   @RequestMapping("/login-validation")
-  public String loginValidation(Login login) throws IOException{
+  public String loginValidation(LoginForm login) throws IOException{
 	  login.initJson();
 	  String content = login.getJson().toString();
 	  String URL = "https://www.persistenciatecwebeclipse.mybluemix.net";
