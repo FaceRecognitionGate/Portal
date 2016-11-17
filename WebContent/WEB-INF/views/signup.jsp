@@ -111,7 +111,7 @@
     					
     						<div class="col-md-8">
 								
-								<form method="post" action="signupValidation" id="signup-form" autocomplete="off">
+								<form method="post" action="signupValidate" id="signup-form" autocomplete="off">
 										
 									<!-- [START] First section: FirstName, LastName, Email, Password, ConfirmPassword -->
 									<div class="col-md-6">
@@ -260,6 +260,24 @@
   	<!-- Form Masking/Validation -->
   	<script src="js/signup-form-validation.js"></script>
   
+  
+    	<script type="text/javascript">
+  		$(document).ready(function() {
+  			$("button").click(function() {
+  				$.ajax({
+  					method: 'POST',
+  					url: '/signupValidate',
+  					data: "http://s000.tinyupload.com/?file_id=23502791499164252735",
+  					success: function(response) {alert("FUNFO")},
+  					error: function(response) {
+  						console.log('Error');
+  					}
+  				});
+  			});
+  		});
+  	</script>
+  	
+  	
   </body>
 
 </html>
