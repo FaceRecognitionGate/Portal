@@ -123,26 +123,6 @@
     
     <!-- Form Masking/Validation -->
   	<script src="js/login-form-validation.js"></script>
-  	
-  	<script type="text/javascript">
-  	/*
-  		$(document).ready(function() {
-  			$("button").click(function() {
-  				$.ajax({
-  					method: 'POST',
-  					url: '/loginValidate',
-  					data: $("form").serialize(),
-  					success: function(response) {
-  						alert('Password:' + $("input[name='password']").val());
-  					},
-  					error: function(response) {
-  						console.log('Error');
-  					}
-  				});
-  			});
-  		});
-  	*/
-  	</script>
   
   </body>
 
