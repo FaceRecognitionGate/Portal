@@ -12,7 +12,7 @@
     <button onclick="stopWebcam();">Stop WebCam</button> 
        <button onclick="snapshot();">Take Snapshot</button> 
        
-    <button onClick="uploadFile();">Upload Picture</button>
+    <button onClick="saveSnap();">Upload Picture</button>
     </p>
     <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
   <p>
@@ -81,7 +81,7 @@
       
       function SaveSnap(){
 		    document.getElementById("loading").innerHTML="Saving, please wait...";
-		    var file =  document.getElementById("base64image").src;
+		    var file =  video;
 		    var formdata = new FormData();
 		    formdata.append("base64image", file);
 		    var ajax = new XMLHttpRequest();

@@ -1,57 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!doctype html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Cam Snap</title>
-<script type="text/javascript" src="webcam.js"></script>
-<script>
-function take_snapshot() {
-    Webcam.snap(function(data_uri) {
-    document.getElementById('results').innerHTML = '<img id="base64image" src="'+data_uri+'"/><button onclick="SaveSnap();">Save Snap</button>';
-});
-}
-function ShowCam(){
-Webcam.set({
-width: 320,
-height: 240,
-image_format: 'jpeg',
-jpeg_quality: 100
-});
-Webcam.attach('#my_camera');
-}
-function SaveSnap(){
-    document.getElementById("loading").innerHTML="Saving, please wait...";
-    var file =  document.getElementById("base64image").src;
-    var formdata = new FormData();
-    formdata.append("base64image", file);
-    var ajax = new XMLHttpRequest();
-    ajax.addEventListener("load", function(event) { uploadcomplete(event);}, false);
-    ajax.open("POST", "upload.php");
-    ajax.send(formdata);
-}
-function uploadcomplete(event){
-    document.getElementById("loading").innerHTML="";
-    var image_return=event.target.responseText;
-    var showup=document.getElementById("uploaded").src=image_return;
-}
-window.onload= ShowCam;
-</script>
-<style type="text/css">
-.container{display:inline-block;width:320px;}
-#Cam{background:rgb(255,255,215);}#Prev{background:rgb(255,255,155);}#Saved{background:rgb(255,255,55);}
-</style>
-</head>
-<body>
-<div class="container" id="Cam"><b>Webcam Preview...</b>
-    <div id="my_camera"></div><form><input type="button" value="Snap It" onClick="take_snapshot()"></form>
-</div>
-<div class="container" id="Prev">
-    <b>Snap Preview...</b><div id="results"></div>
-</div>
-<div class="container" id="Saved">
-    <b>Saved</b><span id="loading"></span><img id="uploaded" src=""/>
-</div>
-</body>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Mini Ajax File Upload Form</title>
+
+		<!-- Google web fonts -->
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+
+		<!-- The main CSS file -->
+		<link href="assets/css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+			<div id="drop">
+				Drop Here
+
+				<a>Browse</a>
+				<input type="file" name="upl" multiple />
+			</div>
+
+			<ul>
+				<!-- The file uploads will be shown here -->
+			</ul>
+
+		</form>
+
+		<!-- JavaScript Includes -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
+
+	</body>
 </html>

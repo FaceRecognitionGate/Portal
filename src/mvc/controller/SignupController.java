@@ -44,8 +44,8 @@ public class SignupController {
 		  
 		  			  
 		  HttpClient client = HttpClients.createDefault();
-		  String url1 = "nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
-		  String url = "http://requestb.in/qnht7uqn";
+		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
+		  String url1 = "http://requestb.in/qnht7uqn";
 		  HttpPost request = new HttpPost(url);
 		  		  
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
