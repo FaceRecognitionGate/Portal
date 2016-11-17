@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ProfileMapping {
+public class ProfileController {
 
-	@RequestMapping("/profile")
+	@RequestMapping(value="/profile")
 	public String profile() {
 		return "profile";
 	}
 	
-	@RequestMapping("/profile/edit")
+	@RequestMapping(value="/profile/edit")
 	public String profileEdit() throws Exception {
 		SendImage.UploadZip();
 		return "edit-profile";

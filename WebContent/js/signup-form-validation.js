@@ -41,7 +41,7 @@ $(document).ready(function(){
 	var validFields = [];
 	$('input, select').not(':input[type=submit]').each(function() {
 		 
-		$(this).blur(function() {
+		$(this).keyup(function() {
 			if(isValid($(this))) {
 				$(this).parent().addClass('has-success'); $(this).parent().removeClass('has-error');
 				$(this).siblings().html('<i class="fa fa-check"></i>');
