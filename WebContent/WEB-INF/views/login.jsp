@@ -64,7 +64,7 @@
     							
     							<div class="container-fluid">
     								
-    								<form method="post" action="validateLogin">
+    								<form method="post" action="loginValidate">
   										
   										<div class="form-group">
   										
@@ -125,11 +125,12 @@
   	<script src="js/login-form-validation.js"></script>
   	
   	<script type="text/javascript">
+  	/*
   		$(document).ready(function() {
   			$("button").click(function() {
   				$.ajax({
   					method: 'POST',
-  					url: '/validateLogin',
+  					url: '/loginValidate',
   					data: $("form").serialize(),
   					success: function(response) {
   						alert('Password:' + $("input[name='password']").val());
@@ -140,6 +141,7 @@
   				});
   			});
   		});
+  	*/
   	</script>
   
   </body>
