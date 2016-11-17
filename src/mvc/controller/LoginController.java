@@ -39,7 +39,7 @@ public class LoginController {
 	  String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
 	  Pattern pattern = Pattern.compile(regex);
 	  Matcher matcher = pattern.matcher(email);
-	  
+
 	  System.out.println(matcher.matches());
 	  
 	  if((matcher.matches()) && (password != null && password != "")) {
@@ -62,7 +62,6 @@ public class LoginController {
 	          InputStreamReader stream = new InputStreamReader(resp.getEntity().getContent());
 	          BufferedReader br = new BufferedReader(stream);
 	          String line;
-              System.out.println("if 2");
 	          while ((line = br.readLine()) != null) {
 	              System.out.println(line);
 	          }
@@ -70,7 +69,7 @@ public class LoginController {
 	      }
 	  }
 	  
-	  return "login";
+	  return "redirect:login";
   }
   
 }
