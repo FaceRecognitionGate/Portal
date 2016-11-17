@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProfileController {
 
 	@RequestMapping(value="/profile")
-	public String profile() {
+	public String profile() throws Exception {
+		SendImage.UploadZip();
 		return "profile";
 	}
 	
 	@RequestMapping(value="/profile/edit")
-	public String profileEdit() throws Exception {
-		SendImage.UploadZip();
+	public String profileEdit() {
 		return "edit-profile";
 	}
 }
