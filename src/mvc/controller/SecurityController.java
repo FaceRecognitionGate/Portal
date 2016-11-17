@@ -43,7 +43,7 @@ public class SecurityController {
 		
 		if(resp.getStatusLine().getStatusCode() == 200) {
 			System.out.println("Abriu a catraca!");
-			return "gate-access";
+			return "redirect:../security/gate";
 		}
 		
 		return "gate-access";
