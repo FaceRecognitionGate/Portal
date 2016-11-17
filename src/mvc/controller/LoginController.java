@@ -45,9 +45,9 @@ public class LoginController {
 	  if((matcher.matches()) && (password != null && password != "")) {
           System.out.println("if 1");
 		  HttpClient client = HttpClients.createDefault();
-//		  String url = "http://requestb.in/qnht7uqn";
+		  String url = "http://requestb.in/qnht7uqn";
 
-		  String url = "http://persistenciatecwebeclipse.mybluemix.net/RecebeJsonLogin";
+//		  String url = "http://persistenciatecwebeclipse.mybluemix.net/RecebeJsonLogin";
 		  HttpPost request = new HttpPost(url);
 		  
 		  String json = String.format("{\"email\":\"%s\",\"senha\":\"%s\"}", email, password);
