@@ -30,9 +30,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import mvc.model.LoginForm;
-import mvc.model.User;
-
 @Controller
 public class LoginController {
 
@@ -57,6 +54,7 @@ public class LoginController {
 	  Matcher matcher = pattern.matcher(email);
 	  
 	  System.out.println(matcher.matches());
+	  System.out.println("ok");
 	  
 	  if((matcher.matches()) && (password != null && password != "")) {
 		  
