@@ -11,6 +11,8 @@
     <button onclick="startWebcam();">Start WebCam</button>
     <button onclick="stopWebcam();">Stop WebCam</button> 
        <button onclick="snapshot();">Take Snapshot</button> 
+       
+    <button onClick="uploadFile();">Upload Picture</button>
     </p>
     <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
   <p>
@@ -76,6 +78,22 @@
          // Draws current image from the video element into the canvas
         ctx.drawImage(video, 0,0, canvas.width, canvas.height);
       }
+      
+      function SaveSnap(){
+		    document.getElementById("loading").innerHTML="Saving, please wait...";
+		    var file =  document.getElementById("base64image").src;
+		    var formdata = new FormData();
+		    formdata.append("base64image", file);
+		    var ajax = new XMLHttpRequest();
+		    ajax.addEventListener("load", function(event) { uploadcomplete(event);}, false);
+		    ajax.open("POST", "upload.php");
+		    ajax.send(formdata);
+		}
+		function uploadcomplete(event){
+		    document.getElementById("loading").innerHTML="";
+		    var image_return=event.target.responseText;
+		    var showup=document.getElementById("uploaded").src=image_return;
+		}
 
   </script>
 </html>

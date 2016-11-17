@@ -34,7 +34,7 @@ public class SignupController {
 	
 	@RequestMapping("webcam-test")
 	public String webcam() {
-		return "webcam-test";
+		return "webcam-upload-test";
 	}
 	
 	@PostMapping("signupValidate")
