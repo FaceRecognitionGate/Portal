@@ -34,8 +34,9 @@
 		  crossorigin="anonymous">
 
 	<!-- Custom CSS -->
-	<link href="css/default.css" rel="stylesheet">
-	<link href="css/override.css" rel="stylesheet">
+	<link href="<c:url value="/css/default.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/override.css"/>" rel="stylesheet">
+	<link href="<c:url value="/css/signup.css"/>" rel="stylesheet">
 	
 	<!-- jQuery -->
     <script src="http://code.jquery.com/jquery-3.1.1.min.js"
