@@ -1,13 +1,19 @@
 package mvc.controller;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -21,10 +27,13 @@ import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SignupController {
+	
 
 	@GetMapping("/signup")
 	public String signup() {
@@ -32,14 +41,36 @@ public class SignupController {
 		return "signup";
 	}
 	
+	@RequestMapping("webcam-test")
+	public String webcam() {
+		return "webcam-upload-test";
+	}
+	
+	@RequestMapping("/imageUpload")
+	public void test (@RequestBody String png) throws IOException {
+		String [] parts = png.split(",");
+		String png64 = parts[1];
+		byte [] imageByte;
+		BufferedImage image = null;
+		
+		imageByte = Base64.getDecoder().decode(png64);
+		ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
+		image = ImageIO.read(bis);
+		bis.close();
+		
+		File teste = new File("/images");
+		ImageIO.write(image, "PNG", teste);
+		
+		System.out.println("Test"+png);
+	}
 	
 	@PostMapping("signupValidate")
 	public String signupValidatePOST() throws IOException {
 		  System.out.println("ENTROU EM VALIDATE");
 			  
 		  HttpClient client = HttpClients.createDefault();
-		  String url1 = "nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
-		  String url = "http://requestb.in/qnht7uqn";
+		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
+		  String url1 = "http://requestb.in/qnht7uqn";
 		  HttpPost request = new HttpPost(url);
 		  		  
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();

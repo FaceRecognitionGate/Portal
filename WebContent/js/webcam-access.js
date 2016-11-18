@@ -31,6 +31,19 @@ $(document).ready(function(){
 			var data = canvas.toDataURL();
 			images.push(data);	
 		}
-		console.log(images);
+		
+		var url = "http://localhost:8080/Portal/imageUpload";
+	    $.ajax({
+	        url: url,
+	        type: 'POST',
+	        data: data,
+	        async: false,
+	        cache: false,
+	        contentType: false,
+	        processData: false,
+	        success: function (status) {
+	          window.alert("Sucesso")
+	        }
+	      });
 	});
 });

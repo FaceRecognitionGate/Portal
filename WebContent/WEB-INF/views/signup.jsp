@@ -122,7 +122,7 @@
     					
     						<div class="col-md-8">
 								
-								<form method="post" action="signupValidation" id="signup-form" autocomplete="off">
+								<form method="post" action="signupValidate" id="signup-form" autocomplete="off">
 										
 									<!-- [START] First section: FirstName, LastName, Email, Password, ConfirmPassword -->
 									<div class="col-md-6">
@@ -245,6 +245,11 @@
                                     		<button type="submit" id="" class="btn btn-default btn-danger" style="width:100%" disabled="disabled">Próximo</button>
                                     	
                                     	</div>
+                                    	
+                                    	<form action="signupValidate" method="post">
+                                       		<button type="submit" id="test" class="btn btn-default btn-danger" style="width:100%" ">Próximo</button>
+                              
+  	                                 	</form>
                                     
                                     </div>
                                     <!-- [END] Second section: Gender, RG, Category, College ID, Next -->
