@@ -18,9 +18,20 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import mvc.model.*;
 
 @Controller
 public class LoginController {
@@ -32,8 +43,8 @@ public class LoginController {
   }
   
   @PostMapping("loginValidate")
-  public String validateLoginForm(@RequestParam("email") String email, @RequestParam("password") String password) throws ClientProtocolException, IOException {
-	  
+  public String validateLoginForm(@ModelAttribute("User") User user, final Model model, 
+	        final RedirectAttributes redirectAttributes,@RequestParam("email") String email, @RequestParam("password") String password) throws ClientProtocolException, IOException {
 	  System.out.println("Accessed: /loginValidate method=POST");
 	  
 	  String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
@@ -57,7 +68,7 @@ public class LoginController {
 	      request.setEntity(new UrlEncodedFormEntity(urlParameters));
 
 	      HttpResponse resp = client.execute(request);
-	      
+	      user = null;
 	      if(resp.getStatusLine().getStatusCode() == 200) {
 	          InputStreamReader stream = new InputStreamReader(resp.getEntity().getContent());
 	          BufferedReader br = new BufferedReader(stream);
@@ -65,8 +76,12 @@ public class LoginController {
               System.out.println("if 2");
 	          while ((line = br.readLine()) != null) {
 	              System.out.println(line);
+	              Gson gson = new Gson();
+	              user = (User) gson.fromJson(line, User.class);
+	              System.out.println(user.getFirstName()+" "+user.getLastName()+" "+user.getEmail()+" "+user.getGender()+" "+user.getRg()+" "+user.getCategory()+" "+user.getId()+" ");
 	          }
-	          return "redirect:profile";
+	          redirectAttributes.addFlashAttribute("User", user);
+		      return "redirect:/profile";
 	      }
 	  }
 	  

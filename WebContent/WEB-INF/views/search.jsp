@@ -64,7 +64,7 @@
     							
     							<div class="container-fluid">
     								
-    								<form method="post" action="profile">
+    								<form method="post" action="rgValidate">
   										
   										<div class="form-group">
     										

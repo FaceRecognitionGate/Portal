@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -109,7 +110,7 @@
 							        	
 							        	<th>Nome:</th>
 							        	
-							        	<td class="text-input">Gabriela Almeida</td>					        
+							        	<td class="text-input">${nome}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -117,7 +118,7 @@
 							        	
 							        	<th>Sexo:</th>
 							        	
-							        	<td class="select-input">Feminino</td>					        
+							        	<td class="select-input">${sexo}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -125,7 +126,7 @@
 							        	
 							        	<th>E-mail:</th>
 							        	
-							        	<td class="text-input">gabriela.almeida@gmail.com</td>					        
+							        	<td class="text-input">${email}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -133,7 +134,7 @@
 							        	
 							        	<th>RG:</th>
 							        	
-							        	<td class="text-input">12.345.678-9</td>					        
+							        	<td class="text-input">${rg}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -141,7 +142,7 @@
 							        	
 							        	<th>Sou um:</th>
 							        	
-							        	<td class="select-input">Aluno</td>					        
+							        	<td class="select-input">${profissao}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -149,7 +150,7 @@
 							        	
 							        	<th>Matrícula:</th>
 							        	
-							        	<td class="text-input">15847921</td>					        
+							        	<td class="text-input">${numeroMatricula}</td>					        
 							      	
 							      	</tr>
 							      	
