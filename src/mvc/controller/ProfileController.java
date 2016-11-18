@@ -30,6 +30,8 @@ public class ProfileController {
 		}
 	}
 	
+	
+	
 	@RequestMapping("/profile/edit")
 	public String profileEdit() throws Exception {
 		return "edit-profile";

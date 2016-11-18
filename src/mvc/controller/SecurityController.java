@@ -19,9 +19,11 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -89,12 +91,25 @@ public class SecurityController {
 		              System.out.println(user.getFirstName()+" "+user.getLastName()+" "+user.getEmail()+" "+user.getGender()+" "+user.getRg()+" "+user.getCategory()+" "+user.getId()+" ");
 		          }
 		          redirectAttributes.addFlashAttribute("User", user);
-			      return "redirect:/profile";
+			      return "redirect:/security/profile";
 		      }
 		  }
 		  
 		  return "security/rgValidate";
 	  }
+	
+	@RequestMapping("security/profile")
+	public String profile(@ModelAttribute("User") final User user,final BindingResult mapping1BindingResult,
+	        final Model model) {
+	    model.addAttribute("nome", user.getFirstName());
+	    model.addAttribute("sobrenome", user.getLastName());
+	    model.addAttribute("sexo", user.getGender());
+	    model.addAttribute("email", user.getEmail());
+	    model.addAttribute("numeroMatricula", user.getId());
+	    model.addAttribute("profissao", user.getCategory());
+	    model.addAttribute("rg", user.getRg());
+		return "profile-security";
+	}
 	
 	@PostMapping("security/open")
 	public String openGate() throws ClientProtocolException, IOException {
