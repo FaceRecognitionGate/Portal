@@ -24,6 +24,8 @@ public class ProfileController {
 		return "profile";
 	}
 	
+	
+	
 	@RequestMapping("/profile/edit")
 	public String profileEdit() throws Exception {
 		return "edit-profile";
