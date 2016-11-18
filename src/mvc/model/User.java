@@ -2,20 +2,20 @@ package mvc.model;
 
 public class User {
 
-	private String firstName;
-	private String lastName;
+	private String nome;
+	private String sobrenome;
 	private String email;
 	private String password;
-	private String gender;
+	private String sexo;
 	private String rg;
-	private String category;
-	private String id;
+	private String profissao;
+	private String numeroMatricula;
   
-	public String getFirstName() {return firstName;}
-	public void setFirstName(String firstName) {this.firstName = firstName;}
+	public String getFirstName() {return nome;}
+	public void setFirstName(String nome) {this.nome = nome;}
   
-	public String getLastName() {return lastName;}
-	public void setLastName(String lastName) {this.lastName = lastName;}
+	public String getLastName() {return sobrenome;}
+	public void setLastName(String sobrenome) {this.sobrenome = sobrenome;}
   
 	public String getEmail() {return email;}
 	public void setEmail(String email) {this.email = email;}
@@ -23,16 +23,16 @@ public class User {
 	public String getPassword() {return password;}
 	public void setPassword(String password) {this.password = password;}
 	
-	public String getGender() {return gender;}
-	public void setGender(String gender) {this.gender = gender;}
+	public String getGender() {return sexo;}
+	public void setGender(String sexo) {this.sexo = sexo;}
   
 	public String getRg() {return rg;}
 	public void setRg(String rg) {this.rg = rg;}
   
-	public String getCategory() {return category;}
-	public void setCategory(String category) {this.category = category;}
+	public String getCategory() {return profissao;}
+	public void setCategory(String profissao) {this.profissao = profissao;}
   
-	public String getId() {return id;}
-	public void setId(String id) {this.id = id;}  
+	public String getId() {return numeroMatricula;}
+	public void setId(String numeroMatricula) {this.numeroMatricula = numeroMatricula;}  
   
 }
