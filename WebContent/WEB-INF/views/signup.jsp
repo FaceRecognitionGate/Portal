@@ -85,7 +85,7 @@
     										
     							</div>
     							
-    							<div class="alert alert-warning" id="webcam-alert">
+    							<div class="alert alert-warning" id="webcam-alert2">
     										
     								Quando estiver pronto(a), clique em salvar imagem para poder prosseguir com o cadastro!
     										
@@ -104,11 +104,11 @@
     								<div class="col-md-12">
     								
     								
-    									<div class="embed-responsive embed-responsive-16by9">
+    									
   									
-  											<video autoplay="autoplay" id="video"></video>
+  											<video autoplay="autoplay" id="video" style="width:100%"></video>
   											
-										</div>
+										
 										
 										<button id="snap" class="btn btn-default btn-danger" style="width:100%;margin-top:5%">Salvar Imagens</button>
 										
@@ -194,9 +194,9 @@
                                         	
                                         		<option selected disabled hidden="hidden" value="">Sexo</option>
                                             
-                                            	<option value="0">Feminino</option>
+                                            	<option value="F">Feminino</option>
                                             
-                                            	<option value="1">Masculino</option>
+                                            	<option value="M">Masculino</option>
                                         
                                        		</select>
                                 	
@@ -219,11 +219,11 @@
                                         
                                         		<option selected disabled hidden="hidden" value="">Sou um:</option>
                                             
-                                            	<option value="0">Aluno do Insper</option>
+                                            	<option value="Estudante">Aluno do Insper</option>
                                             
-                                            	<option value="1">Professor do Insper</option>
+                                            	<option value="Professor">Professor do Insper</option>
                                             
-                                            	<option value="2">Funcionário do Insper</option>
+                                            	<option value="Funcionario">Funcionário do Insper</option>
                                         
                                         	</select>
                                               
@@ -245,11 +245,6 @@
                                     		<button type="submit" id="" class="btn btn-default btn-danger" style="width:100%" disabled="disabled">Próximo</button>
                                     	
                                     	</div>
-                                    	
-                                    	<form action="signupValidate" method="post">
-                                       		<button type="submit" id="test" class="btn btn-default btn-danger" style="width:100%" ">Próximo</button>
-                              
-  	                                 	</form>
                                     
                                     </div>
                                     <!-- [END] Second section: Gender, RG, Category, College ID, Next -->

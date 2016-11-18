@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -59,12 +60,14 @@ public class SignupController {
 		bis.close();
 		
 		File teste = new File("C:/Users/Rafael/Documents/GitHub/Portal/Images.png");
+
 		ImageIO.write(image, "PNG", teste);
 		
 		System.out.println("Test"+png);
 	}
 	
 	@PostMapping("signupValidate")
+<<<<<<< HEAD
 	public String signupValidatePOST() throws IOException {
 		  System.out.println("ENTROU EM VALIDATE");
 		  
@@ -100,6 +103,7 @@ public class SignupController {
 	          return "profile";
 	      }
 		return "signup";
+
 	  }
 }
 	

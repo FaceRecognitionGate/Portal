@@ -18,7 +18,7 @@ $(document).ready(function(){
 		var name = input.attr('name');
 		var value = input.val();
 		
-		if(name == 'first-name' || name == 'last-name') {
+		if(name == 'firstName' || name == 'lastName') {
 			result = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕçÇ]+$/.test(value);
 		} else if(name == 'email') {
 			result = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(value);

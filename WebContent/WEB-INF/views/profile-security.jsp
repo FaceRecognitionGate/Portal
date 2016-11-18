@@ -13,7 +13,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Meus Dados - Catraca</title>
+    <title>Dados Usuario - Catraca</title>
 
     <!-- Bootstrap CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -69,21 +69,7 @@
     				
     				<div id="bg-text-override" class="panel-heading">
     					
-    					<div class="row">
-    					
-    						<div class="col-md-11">
-    					
-    							<h1>Meus Dados</h1>
-    							
-    						</div>
-    						
-    						<div class="col-md-1">
-    						
-    							<a href="logout"><i class="fa fa-power-off"></i></a>
-    						
-    						</div>
-    						
-    					</div>
+    					<h1>Dados Usuário</h1>
     				
     				</div>
     				
@@ -104,10 +90,8 @@
 	    							
 	    							<div class="row">
 	    								<div class="col-md-12 text-center">
-	    									<label for="imgInp" class="btn btn-default btn-danger" style="width:100%;margin-bottom:5%">Alterar Imagem</label>
  											<input id="imgInp" style="display:none" type="file">
 	    									<br>
-	    									<button type="submit" id="" class="btn btn-default btn-danger" style="display:none">Salvar</button>
 	    								</div>
 	    							</div>
 	    							
@@ -125,7 +109,7 @@
 							        	
 							        	<th>Nome:</th>
 							        	
-							        	<td class="text-input">${nome}&nbsp;${sobrenome}</td>					        
+							        	<td class="text-input">${nome}</td>					        
 							      	
 							      	</tr>
 							      	
@@ -171,7 +155,6 @@
 							      	
 								</table>
 								
-								<button type="button" class="btn btn-default btn-block" style="width:100%">Editar Dados</button>
     						
     						</div>
     						<!-- [END] User Info -->
