@@ -71,17 +71,20 @@ public class SignupController {
 		  String [] src = {"C:/Users/Rafael/Documents/GitHub/Portal/Images.png"};
 		  String zipUrl = "C:/Users/Rafael/Documents/GitHub/Portal/teste.zip";
 		  
+		  String testeUrl = "http://requestb.in/19axero1";
+		  String nuc = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
 		  ZipFiles.Zip(zipUrl, src);
 		  
 		  HttpClient client = HttpClients.createDefault();
-		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
-		  String url1 = "http://requestb.in/qnht7uqn";
+		  String url1 = nuc;
+		  String url = "http://requestb.in/qnht7uqn";
 		  HttpPost request = new HttpPost(url);
 		  
 		  String zipPost = "10.91.16.76:8080/Portal/teste.zip";
+		  
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		  urlParameters.add(new BasicNameValuePair("email", "faustosilva@globo.com"));
-		  urlParameters.add(new BasicNameValuePair("link", zipPost));
+		  urlParameters.add(new BasicNameValuePair("link", testeUrl));
 
 		  request.setEntity(new UrlEncodedFormEntity(urlParameters));
 

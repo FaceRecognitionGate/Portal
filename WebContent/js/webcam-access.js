@@ -26,7 +26,7 @@ $(document).ready(function(){
 		//$.post('fotossalvar.php', {imagem:canvas.toDataURL()}, function(data){},'json');
 		var images = [];
 		
-		for (i = 0; i < 30; i++) { 
+		for (i = 0; i < 2; i++) { 
 			canvas.getContext('2d').drawImage(video, 0, 0, 640, 480);
 			var data = canvas.toDataURL();
 			images.push(data);	
