@@ -58,7 +58,7 @@ public class SignupController {
 		image = ImageIO.read(bis);
 		bis.close();
 		
-		File teste = new File("/images");
+		File teste = new File("C:/Users/Rafael/Documents/GitHub/Portal/Images.png");
 		ImageIO.write(image, "PNG", teste);
 		
 		System.out.println("Test"+png);
@@ -67,15 +67,21 @@ public class SignupController {
 	@PostMapping("signupValidate")
 	public String signupValidatePOST() throws IOException {
 		  System.out.println("ENTROU EM VALIDATE");
-			  
+		  
+		  String [] src = {"C:/Users/Rafael/Documents/GitHub/Portal/Images.png"};
+		  String zipUrl = "C:/Users/Rafael/Documents/GitHub/Portal/teste.zip";
+		  
+		  ZipFiles.Zip(zipUrl, src);
+		  
 		  HttpClient client = HttpClients.createDefault();
 		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
 		  String url1 = "http://requestb.in/qnht7uqn";
 		  HttpPost request = new HttpPost(url);
-		  		  
+		  
+		  String zipPost = "10.91.16.76:8080/Portal/teste.zip";
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		  urlParameters.add(new BasicNameValuePair("email", "faustosilva@globo.com"));
-		  urlParameters.add(new BasicNameValuePair("link", "http://s000.tinyupload.com/index.php?file_id=23502791499164252735"));
+		  urlParameters.add(new BasicNameValuePair("link", zipPost));
 
 		  request.setEntity(new UrlEncodedFormEntity(urlParameters));
 

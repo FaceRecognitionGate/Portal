@@ -7,6 +7,13 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
+  <security-constraint>
+  <web-resource-collection>
+    <web-resource-name >precluded methods</web-resource-name>
+    <url-pattern >/Images/*</url-pattern>
+  </web-resource-collection>
+  </security-constraint>
+  
   <servlet>
   	<servlet-name>springmvc</servlet-name>
     <servlet-class>
