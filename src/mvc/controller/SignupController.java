@@ -67,7 +67,6 @@ public class SignupController {
 	}
 	
 	@PostMapping("signupValidate")
-<<<<<<< HEAD
 	public String signupValidatePOST() throws IOException {
 		  System.out.println("ENTROU EM VALIDATE");
 		  
@@ -81,13 +80,13 @@ public class SignupController {
 		  HttpClient client = HttpClients.createDefault();
 		  String url1 = nuc;
 		  String url = "http://requestb.in/qnht7uqn";
-		  HttpPost request = new HttpPost(url);
+		  HttpPost request = new HttpPost(url1);
 		  
 		  String zipPost = "10.91.16.76:8080/Portal/teste.zip";
 		  
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		  urlParameters.add(new BasicNameValuePair("email", "faustosilva@globo.com"));
-		  urlParameters.add(new BasicNameValuePair("link", testeUrl));
+		  urlParameters.add(new BasicNameValuePair("link", zipPost));
 
 		  request.setEntity(new UrlEncodedFormEntity(urlParameters));
 
