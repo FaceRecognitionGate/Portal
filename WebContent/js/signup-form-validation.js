@@ -18,17 +18,17 @@ $(document).ready(function(){
 		var name = input.attr('name');
 		var value = input.val();
 		
-		if(name == 'firstName' || name == 'lastName') {
+		if(name == 'nome' || name == 'sobrenome') {
 			result = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕçÇ]+$/.test(value);
 		} else if(name == 'email') {
 			result = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i.test(value);
-		} else if(name == 'password') {
+		} else if(name == 'senha') {
 			result = true && value != "";
 		} else if(name == 'confirm-password') {
 			result = value == $('input[name="password"]').val() && value != "";
-		} else if(name == 'gender' || name == 'category') {
+		} else if(name == 'sexo' || name == 'profissao') {
 			result = value == 0 || value == 1 || value == 2;
-		} else if(name == 'id') {
+		} else if(name == 'numeroMatricula') {
 			result = /^[0-9]+$/.test(value) && value.length <= 8;
 		} else if(name == 'rg') {
 			result = value.length == 12;

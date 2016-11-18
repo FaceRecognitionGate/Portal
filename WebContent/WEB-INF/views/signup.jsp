@@ -131,7 +131,7 @@
 										
 											<div class="input-group">
 												
-												<input aria-describedby="first-name-addon" class="form-control validation" name="firstName" placeholder="Nome" required type="text">
+												<input aria-describedby="first-name-addon" class="form-control validation" name="nome" placeholder="Nome" required type="text">
 												<span class="input-group-addon" id="first-name-addon"><i class="fa fa-circle-o"></i></span>
 												
 											</div>
@@ -142,7 +142,7 @@
                                 		
                                 			<div class="input-group">
                                              
-                                				<input aria-describedby="last-name-addon" class="form-control validation" name="lastName" placeholder="Sobrenome" required type="text">
+                                				<input aria-describedby="last-name-addon" class="form-control validation" name="sobrenome" placeholder="Sobrenome" required type="text">
                                 				<span class="input-group-addon" id="last-name-addon"><i class="fa fa-circle-o"></i></span>
                                 	
                                 			</div>
@@ -164,7 +164,7 @@
                                 		
                                 			<div class="input-group">
                                 	
-                                				<input aria-describedby="password-addon" class="form-control" name="password" placeholder="Senha" required type="password">
+                                				<input aria-describedby="password-addon" class="form-control" name="senha" placeholder="Senha" required type="password">
                                 				<span class="input-group-addon" id="password-addon"><i class="fa fa-circle-o"></i></span>
                                 	
                                 			</div>
@@ -190,7 +190,7 @@
                                            	
 										<div class="form-group">
                                 		
-                                			<select class="form-control" name="gender" required>
+                                			<select class="form-control" name="sexo" required>
                                         	
                                         		<option selected disabled hidden="hidden" value="">Sexo</option>
                                             
@@ -215,7 +215,7 @@
                                     
                                     	<div class="form-group">
                                     	
-                                    		<select class="form-control" name="category" required>
+                                    		<select class="form-control" name="profissao" required>
                                         
                                         		<option selected disabled hidden="hidden" value="">Sou um:</option>
                                             
@@ -233,7 +233,7 @@
                                     	
                                     		<div class="input-group">
                                     	
-                                    			<input aria-describedby="id-addon" class="form-control" name="id" placeholder="Nº de Matrícula" required type="text">
+                                    			<input aria-describedby="id-addon" class="form-control" name="numeroMatricula" placeholder="Nº de Matrícula" required type="text">
                                 				<span class="input-group-addon" id="id-addon"><i class="fa fa-circle-o"></i></span>
                                                 
                                     		</div>

@@ -59,36 +59,31 @@ public class SignupController {
 		image = ImageIO.read(bis);
 		bis.close();
 		
-		File teste = new File("/../../../WebContent/images");
+		File teste = new File("C:/Users/Gustavo/Desktop/tmp/Portal/images.png");
 		ImageIO.write(image, "PNG", teste);
 		
 		System.out.println("Test"+png);
 	}
 	
 	@PostMapping("signupValidate")
-	public String signupValidatePOST(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirm-password") String confirmPassword,
-			@RequestParam("gender") String gender, @RequestParam("rg") String rg, @RequestParam("category") String category, @RequestParam("id") String id) throws IOException {
+	public String signupValidatePOST(@RequestParam("nome") String firstName, @RequestParam("sobrenome") String lastName,
+			@RequestParam("email") String email, @RequestParam("senha") String password, @RequestParam("confirm-password") String confirmPassword,
+			@RequestParam("sexo") String gender, @RequestParam("rg") String rg, @RequestParam("profissao") String category, @RequestParam("numeroMatricula") String id) throws IOException {
 		
-		/*//POST Request (FaceRecognition)
+		String [] src = {"C:/Users/Gustavo/Desktop/tmp/Portal/images.png"};
+		String zipUrl = "C:/Users/Gustavo/Desktop/tmp/Portal/teste.zip";
+		
+		ZipFiles.Zip(zipUrl, src);
+		String url = "10.92.0.253:8080/Portal/teste.zip";
+		
 		HttpClient frClient = HttpClients.createDefault();
 		String frUrl = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
 		HttpPost frRequest = new HttpPost(frUrl);
 		List<NameValuePair> frUrlParameters = new ArrayList<NameValuePair>();
 		frUrlParameters.add(new BasicNameValuePair("email", email));
-		frUrlParameters.add(new BasicNameValuePair("link", "http://s000.tinyupload.com/index.php?file_id=23502791499164252735"));
+		frUrlParameters.add(new BasicNameValuePair("link", "http://requestb.in/qnht7uqn"));
 		frRequest.setEntity(new UrlEncodedFormEntity(frUrlParameters));
 	    HttpResponse frResp = frClient.execute(frRequest);
-		
-	    //POST Response (FaceRecognition)
-	    if(frResp.getStatusLine().getStatusCode() == 200) {
-	    	InputStreamReader stream = new InputStreamReader(frResp.getEntity().getContent());
-	        BufferedReader br = new BufferedReader(stream);
-	        String line;
-	        while ((line = br.readLine()) != null) {
-	        	System.out.println(line);
-	        }	      
-	    }*/
 	    
 	    //POST Request (Database)
 	    HttpClient dbClient = HttpClients.createDefault();
