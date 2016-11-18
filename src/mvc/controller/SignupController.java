@@ -70,7 +70,7 @@ public class SignupController {
 			@RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirm-password") String confirmPassword,
 			@RequestParam("gender") String gender, @RequestParam("rg") String rg, @RequestParam("category") String category, @RequestParam("id") String id) throws IOException {
 		
-		//POST Request (FaceRecognition)
+		/*//POST Request (FaceRecognition)
 		HttpClient frClient = HttpClients.createDefault();
 		String frUrl = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
 		HttpPost frRequest = new HttpPost(frUrl);
@@ -88,7 +88,7 @@ public class SignupController {
 	        while ((line = br.readLine()) != null) {
 	        	System.out.println(line);
 	        }	      
-	    }
+	    }*/
 	    
 	    //POST Request (Database)
 	    HttpClient dbClient = HttpClients.createDefault();

@@ -51,6 +51,7 @@ public class SessionController {
 	  //System.out.println(matcher.matches());
 	  
 	  if((matcher.matches()) && (password != null && password != "")) {
+		  System.out.println("VALIDOU");
 		  
 		  //POST Request
           HttpClient client = HttpClients.createDefault();
