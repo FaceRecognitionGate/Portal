@@ -81,7 +81,7 @@ public class SignupController {
 		HttpPost frRequest = new HttpPost(frUrl);
 		List<NameValuePair> frUrlParameters = new ArrayList<NameValuePair>();
 		frUrlParameters.add(new BasicNameValuePair("email", email));
-		frUrlParameters.add(new BasicNameValuePair("link", "http://requestb.in/qnht7uqn"));
+		frUrlParameters.add(new BasicNameValuePair("link", url));
 		frRequest.setEntity(new UrlEncodedFormEntity(frUrlParameters));
 	    HttpResponse frResp = frClient.execute(frRequest);
 	    
