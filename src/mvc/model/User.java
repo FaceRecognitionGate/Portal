@@ -33,6 +33,10 @@ public class User {
 	public void setCategory(String profissao) {this.profissao = profissao;}
   
 	public String getId() {return numeroMatricula;}
-	public void setId(String numeroMatricula) {this.numeroMatricula = numeroMatricula;}  
+	public void setId(String numeroMatricula) {this.numeroMatricula = numeroMatricula;}
+	
+	public String toString() {
+		return String.format("User(%s, %s, %s, %s, %s, %s, %s)", this.nome, this.sobrenome, this.email, this.sexo, this.rg, this.profissao, this.numeroMatricula);
+	}
   
 }

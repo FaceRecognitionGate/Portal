@@ -8,33 +8,28 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import mvc.model.*;
 
 @Controller
-public class LoginController {
+public class SessionController {
 
   @GetMapping("/login")
   public String loginFormGET() {
@@ -43,50 +38,56 @@ public class LoginController {
   }
   
   @PostMapping("loginValidate")
-  public String validateLoginForm(@ModelAttribute("User") User user, final Model model, 
-	        final RedirectAttributes redirectAttributes,@RequestParam("email") String email, @RequestParam("password") String password) throws ClientProtocolException, IOException {
+  public String validateLoginForm(@ModelAttribute("user") User user, @RequestParam("email") String email, @RequestParam("password") String password, HttpSession session) throws ClientProtocolException, IOException {
+	  
 	  System.out.println("Accessed: /loginValidate method=POST");
+	  
+	  user = null;
 	  
 	  String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
 	  Pattern pattern = Pattern.compile(regex);
 	  Matcher matcher = pattern.matcher(email);
 
-	  System.out.println(matcher.matches());
+	  //System.out.println(matcher.matches());
 	  
 	  if((matcher.matches()) && (password != null && password != "")) {
-
-          
-		  System.out.println("if 1");
 		  
+		  //POST Request
           HttpClient client = HttpClients.createDefault();
 		  String url = "http://persistenciatecwebeclipse.mybluemix.net/RecebeJsonLogin";
-
 		  HttpPost request = new HttpPost(url);
-		  
 		  String json = String.format("{\"email\":\"%s\",\"senha\":\"%s\"}", email, password);
-		  
 		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
 		  urlParameters.add(new BasicNameValuePair("json",json));
 	      request.setEntity(new UrlEncodedFormEntity(urlParameters));
-
 	      HttpResponse resp = client.execute(request);
-	      user = null;
+	      
+	      //POST Response
+	      Gson gson = new Gson();
 	      if(resp.getStatusLine().getStatusCode() == 200) {
 	          InputStreamReader stream = new InputStreamReader(resp.getEntity().getContent());
 	          BufferedReader br = new BufferedReader(stream);
-	          String line;
-	          while ((line = br.readLine()) != null) {
-	              System.out.println(line);
-	              Gson gson = new Gson();
+	          String line;	          
+	          while((line = br.readLine()) != null) {
 	              user = (User) gson.fromJson(line, User.class);
-	              System.out.println(user.getFirstName()+" "+user.getLastName()+" "+user.getEmail()+" "+user.getGender()+" "+user.getRg()+" "+user.getCategory()+" "+user.getId()+" ");
+	              if(user == null) {
+	            	  return "redirect:/login";
+	              }
 	          }
-	          redirectAttributes.addFlashAttribute("User", user);
+	          
+	          session.setAttribute("USER_OBJ", user);
+	          session.setAttribute("LOGGED_USER_ID", user.getId());
 		      return "redirect:/profile";
 	      }
 	  }
 	  
-	  return "redirect:login";
+	  return "redirect:/login";
+  }
+  
+  @GetMapping("logout")
+  public String logout(HttpSession session) {
+	  session.invalidate();
+	  return "redirect:/login";
   }
   
 }

@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -65,32 +66,53 @@ public class SignupController {
 	}
 	
 	@PostMapping("signupValidate")
-	public String signupValidatePOST() throws IOException {
-		  System.out.println("ENTROU EM VALIDATE");
-			  
-		  HttpClient client = HttpClients.createDefault();
-		  String url = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
-		  String url1 = "http://requestb.in/qnht7uqn";
-		  HttpPost request = new HttpPost(url);
-		  		  
-		  List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
-		  urlParameters.add(new BasicNameValuePair("email", "faustosilva@globo.com"));
-		  urlParameters.add(new BasicNameValuePair("link", "http://s000.tinyupload.com/index.php?file_id=23502791499164252735"));
-
-		  request.setEntity(new UrlEncodedFormEntity(urlParameters));
-
-	      HttpResponse resp = client.execute(request);
-		      
-	      if(resp.getStatusLine().getStatusCode() == 200) {
-	          InputStreamReader stream = new InputStreamReader(resp.getEntity().getContent());
-	          BufferedReader br = new BufferedReader(stream);
-	          String line;
-	          while ((line = br.readLine()) != null) {
-	              System.out.println(line);
-	          }
-	          return "profile";
-	      }
-		return "signup";
+	public String signupValidatePOST(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
+			@RequestParam("email") String email, @RequestParam("password") String password, @RequestParam("confirm-password") String confirmPassword,
+			@RequestParam("gender") String gender, @RequestParam("rg") String rg, @RequestParam("category") String category, @RequestParam("id") String id) throws IOException {
+		
+		//POST Request (FaceRecognition)
+		HttpClient frClient = HttpClients.createDefault();
+		String frUrl = "http://nuclinux:8080/ReconhecimentoFacial/ProcessEmail";
+		HttpPost frRequest = new HttpPost(frUrl);
+		List<NameValuePair> frUrlParameters = new ArrayList<NameValuePair>();
+		frUrlParameters.add(new BasicNameValuePair("email", email));
+		frUrlParameters.add(new BasicNameValuePair("link", "http://s000.tinyupload.com/index.php?file_id=23502791499164252735"));
+		frRequest.setEntity(new UrlEncodedFormEntity(frUrlParameters));
+	    HttpResponse frResp = frClient.execute(frRequest);
+		
+	    //POST Response (FaceRecognition)
+	    if(frResp.getStatusLine().getStatusCode() == 200) {
+	    	InputStreamReader stream = new InputStreamReader(frResp.getEntity().getContent());
+	        BufferedReader br = new BufferedReader(stream);
+	        String line;
+	        while ((line = br.readLine()) != null) {
+	        	System.out.println(line);
+	        }	      
+	    }
+	    
+	    //POST Request (Database)
+	    HttpClient dbClient = HttpClients.createDefault();
+		String dbUrl = "http://persistenciatecwebeclipse.mybluemix.net/RecebeJsonDadosPessoais";
+		HttpPost dbRequest = new HttpPost(dbUrl);
+		String json = String.format("{\"nome\":\"%s\",\"sobrenome\":\"%s\",\"email\":\"%s\",\"senha\":\"%s\",\"sexo\":\"%s\",\"rg\":\"%s\",\"profissao\":\"%s\",\"numeroMatricula\":\"%s\"}", firstName, lastName, email, password, gender, rg, category, id);
+		List<NameValuePair> dbUrlParameters = new ArrayList<NameValuePair>();
+		dbUrlParameters.add(new BasicNameValuePair("json",json));
+	    dbRequest.setEntity(new UrlEncodedFormEntity(dbUrlParameters));
+	    HttpResponse dbResp = dbClient.execute(dbRequest);
+	    
+	    //POST Response (Database)
+	    if(dbResp.getStatusLine().getStatusCode() == 200) {
+	    	InputStreamReader stream = new InputStreamReader(dbResp.getEntity().getContent());
+	        BufferedReader br = new BufferedReader(stream);
+	        String line;
+	        while ((line = br.readLine()) != null) {
+	        	System.out.println(line);
+	        }
+	        
+	        return "redirect:/login";
+	    }
+	    
+	    return "redirect:/signup";
 	  }
 }
 	

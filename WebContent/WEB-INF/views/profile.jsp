@@ -68,7 +68,21 @@
     				
     				<div id="bg-text-override" class="panel-heading">
     					
-    					<h1>Meus Dados</h1>
+    					<div class="row">
+    					
+    						<div class="col-md-11">
+    					
+    							<h1>Meus Dados</h1>
+    							
+    						</div>
+    						
+    						<div class="col-md-1">
+    						
+    							<a href="logout"><i class="fa fa-power-off"></i></a>
+    						
+    						</div>
+    						
+    					</div>
     				
     				</div>
     				
@@ -110,7 +124,7 @@
 							        	
 							        	<th>Nome:</th>
 							        	
-							        	<td class="text-input">${nome}</td>					        
+							        	<td class="text-input">${nome}&nbsp;${sobrenome}</td>					        
 							      	
 							      	</tr>
 							      	
