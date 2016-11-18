@@ -59,7 +59,7 @@ public class SignupController {
 		image = ImageIO.read(bis);
 		bis.close();
 		
-		File teste = new File("/images");
+		File teste = new File("/../../../WebContent/images");
 		ImageIO.write(image, "PNG", teste);
 		
 		System.out.println("Test"+png);
