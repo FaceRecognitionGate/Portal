@@ -29,5 +29,14 @@
   <session-config>
   	<session-timeout>30</session-timeout>
   </session-config>
+  
+  <servlet>
+    <servlet-name>images</servlet-name>
+    <servlet-class>com.example.images.ImageServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>images</servlet-name>
+    <url-pattern>/images/*</url-pattern>
+</servlet-mapping>
 
 </web-app>
